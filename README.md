@@ -33,6 +33,10 @@ Fingo ("uygulama") olarak kullanıcılarımızın gizliliğine önem veriyoruz. 
 - İlan süresi dolduğunda bildirim göndermek
 - Uygulama güvenliğini ve içerik moderasyonunu sağlamak
 
+### Eşleşme ve Mesajlaşma Kuralları
+
+- Bir kullanıcı sizi eşleşmeden çıkardığında, kullanıcı güvenliği gereği o kullanıcının ilanlarına tekrar mesaj gönderemezsiniz. Bu kural geçmiş konuşma kayıtları üzerinden otomatik uygulanır.
+
 ---
 
 ## 3. Verilerinizi Kimlerle Paylaşıyoruz
