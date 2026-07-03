@@ -1,6 +1,6 @@
 # Fingo Gizlilik Politikası
 
-**Son güncelleme:** Haziran 2026
+**Son güncelleme:** Temmuz 2026
 
 Fingo ("uygulama") olarak kullanıcılarımızın gizliliğine önem veriyoruz. Bu politika, uygulamamızı kullanırken hangi verileri topladığımızı, nasıl kullandığımızı ve nasıl koruduğumuzu açıklar.
 
@@ -36,6 +36,13 @@ Fingo ("uygulama") olarak kullanıcılarımızın gizliliğine önem veriyoruz. 
 ### Eşleşme ve Mesajlaşma Kuralları
 
 - Bir kullanıcı sizi eşleşmeden çıkardığında, kullanıcı güvenliği gereği o kullanıcının ilanlarına tekrar mesaj gönderemezsiniz. Bu kural geçmiş konuşma kayıtları üzerinden otomatik uygulanır.
+
+### İçerik Kuralları ve Moderasyon
+
+- **Fotoğraf kısıtlaması:** Kullanıcılar yalnızca kendilerine ait profil ve galeri fotoğrafı yükleyebilir. Başka kişilere (ör. ilanda aradığınız kişi) veya mekanlara ait fotoğraf yüklemek ve mesajlaşmada fotoğraf göndermek yasaktır; uygulama bu tür yüklemelere teknik olarak izin vermez.
+- **İlan sınırları:** Bir kullanıcı bir günde en fazla 3 ilan açabilir ve aynı anda en fazla 10 aktif ilana sahip olabilir. Bu sınırlar spam ve kötüye kullanımı önlemek için sunucu tarafında uygulanır.
+- **Şikayet mekanizması:** Her kullanıcı, uygunsuz bulduğu bir ilanı gerekçe seçerek bildirebilir. Farklı kullanıcılardan gelen bildirimler eşiği aştığında ilan otomatik olarak gizlenir ve sahibine geçici ilan verme kısıtlaması uygulanır. Bildirimler kötüye kullanıma karşı saatlik ve günlük kotalarla sınırlandırılmıştır.
+- İlan başlığı ve açıklamaları; hakaret, kişisel bilgi paylaşımı ve benzeri ihlallere karşı otomatik olarak denetlenir.
 
 ---
 
