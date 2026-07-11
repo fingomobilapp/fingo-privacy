@@ -85,6 +85,12 @@ Dilediğinizde:
     olarak silinir. Silme sonrasında, yasal bir veri talebine cevap
     verebilmek için yalnızca kişisel veri içermeyen minimal bir kayıt
     (hesabın ne zaman var olup ne zaman silindiği) tutulur.
+  - **İstisna:** Hakkınızda çözümlenmemiş bir bildirim/şikayet varsa (ör. bir
+    ilanınız veya paylaştığınız bir fotoğraf başka bir kullanıcı tarafından
+    bildirilmiş ve henüz incelenmemişse), kalıcı silme işlemi bildirim
+    incelenip sonuçlanana kadar ertelenir — bu, bildirimin ve ilgili kanıtın
+    incelemeden önce yok olmasını önlemek içindir. Bildirim sonuçlandığında
+    hesabınız normal akışla silinir.
 - Verilerinize erişim veya düzeltme talep edebilirsiniz
 - Konum iznini istediğiniz zaman cihaz ayarlarından iptal edebilirsiniz
 
@@ -274,6 +280,12 @@ people (e.g. someone they saw) or lost animals. Therefore:
 - If you **permanently delete** your account: user row, profile photo and
   posts are deleted within 30 days. Conversations with matched users are
   anonymized ("Deleted user") upon their request.
+- **Exception:** If there is an unresolved report against you (e.g. a
+  listing or photo you shared was reported by another user and has not
+  yet been reviewed), permanent deletion is delayed until the report has
+  been reviewed and resolved, to prevent the report and its evidence from
+  being destroyed before review. Your account is deleted through the
+  normal process once the report is resolved.
 
 ---
 
