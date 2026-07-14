@@ -1,0 +1,112 @@
+[English version below ↓ / İngilizce sürüm aşağıda](#privacy--safety-principles--fingo)
+
+# Fingo — Gizlilik ve Güvenlik İlkelerimiz
+
+**Son güncelleme:** Temmuz 2026
+
+Fingo, **mekâna bağlı anonim bir ilan panosudur** — bir tanışma/flört uygulaması değildir. Kaybettiğin bir eşyayı, kaçırdığın bir evcil hayvanı ya da tanışamadığın birini, o anı yaşadığın mekâna bağlı bir ilanla arayabilirsin. Bu sayfa, uygulamanın temel tasarım kararlarının **neden** böyle olduğunu, sade bir dille açıklıyor. Ayrıntılı, hukuki dille yazılmış tam metin için [Gizlilik Politikası](README.md)'na bakabilirsiniz.
+
+Bu ilkeler; Türkiye'de 6698 sayılı KVKK, Avrupa Birliği'nde GDPR ve Amerika Birleşik Devletleri'nde CCPA/CPRA'nın ortak temel prensipleriyle (veri minimizasyonu, amaç sınırlaması, varsayılan olarak gizlilik — "privacy by default") uyumlu olacak şekilde tasarlanmıştır.
+
+---
+
+### 1) Neden herkes başta bir kuğu olarak görünüyor (anonimlik)?
+
+Çünkü Fingo'da varsayılan durum **gizliliktir**, açıklık değil. Bir ilana yanıt verdiğinde, karşı taraf gerçek adını, yaşını, fotoğrafını göremez — sadece rastgele üretilmiş bir "kuğu kimliği" (ör. "Dişi Kuğu #0421") görür. Bu, veri koruma hukukundaki "varsayılan olarak gizlilik" (privacy by default) ilkesinin doğrudan uygulanmasıdır: kişisel verinizi paylaşmanız için bilinçli bir adım (karşılıklı bağlantı) atmanız gerekir, sistem bunu sizin adınıza otomatik yapmaz.
+
+### 2) Neden fotoğraf paylaşımı karşılıklı bağlantı kurulmadan açılmıyor?
+
+Çünkü fotoğraf, bir kişiyi doğrudan teşhis etmenin en güçlü yoludur. Fingo, iki taraf da birbirini onaylamadan (karşılıklı "bağlantı" kurulmadan) hiçbir fotoğrafı karşı tarafa göstermez — bu kural istemci tarafında bir arayüz kısıtlaması değil, **sunucu tarafında zorunlu kılınan** bir kuraldır (`conversations.status = 'accepted'` olmadan fotoğraf uç noktası isteği reddeder). Bağlantı kurulduktan sonra bile fotoğraflar yalnızca tek seferlik açılabiliyor ve açıldığı anda sunucudan kalıcı olarak siliniyor.
+
+### 3) Neden ilanlar süreli ve kendiliğinden siliniyor?
+
+Çünkü veri koruma hukukunun temel ilkelerinden biri **veri minimizasyonu ve saklama sınırlaması**dır — bir veri, amacı sona erdiğinde saklanmamalıdır. Fingo'da ilanlar varsayılan olarak 24 saat sonra süresi dolar ve otomatik bir arka plan görevi (sweep) tarafından temizlenir. Aradığını bulan bir kullanıcı ilanını istediği an manuel olarak da kaldırabilir; bağlantı kurulduktan 5 dakika sonra kullanıcıya bunu hatırlatan bir bildirim gönderilir.
+
+### 4) Neden isim, telefon numarası veya sosyal medya hesabı paylaşımı yasak?
+
+Çünkü bu bilgiler, anonimlik korumasını tamamen anlamsız kılan doğrudan kimlik teşhis verileridir. İlan gönderilirken metin, 60'tan fazla meslek/unvan kelimesi, Türkçe meslek ekleri (-cı/-ci/-çı/-çi gibi) ve iletişim bilgisi kalıpları (telefon, Instagram, WhatsApp vb.) için otomatik olarak taranır; bu tür içerik tespit edilirse ilan **hiçbir bypass seçeneği olmadan** gönderilemez — kullanıcının içeriği düzenlemesi zorunludur.
+
+### 5) Neden tek taraflı erişim yok, karşılıklı onay ("bağlantı") şart?
+
+Çünkü kimliği açığa çıkarma kararı, tek bir kullanıcının değil, **her iki tarafın da rızasına** bağlı olmalıdır. Bir kullanıcı "bu doğru kişi/durum" deyip onay verse bile, karşı taraf da aynı onayı vermeden hiçbir profil bilgisi veya fotoğraf açılmaz. Bu, GDPR ve KVKK'daki açık rıza (explicit consent) ilkesinin iki taraflı bir mekanizmaya dönüştürülmüş hâlidir.
+
+### 6) Neden aynı mekana ilan verme sıklığı sınırlanıyor?
+
+Çünkü bir kullanıcının aynı mekana kısa aralıklarla tekrar tekrar ilan vermesi, o mekanı gerçek bir arayış dışında bir amaçla (ör. birini izleme/takip etme) kullandığının bir işareti olabilir. Bu yüzden aynı kullanıcı aynı mekana (150 metre yarıçap + mekan adı eşleşmesi ile tanımlanan) 24 saatte en fazla 2, 7 günde en fazla 4 ilan verebilir; aynı başlık+açıklama 30 gün içinde tekrar paylaşılamaz. Bu sınırlar sunucu tarafında zorunlu kılınır, kullanıcı arayüzünde atlanabilecek bir uyarı değildir.
+
+### 7) Neden moderasyon ve şikayet mekanizması var?
+
+Çünkü kullanıcı tarafından oluşturulan her platformda kötüye kullanım riski vardır ve bu riski azaltmak platformun sorumluluğundadır. Her ilan; hakaret, kişisel bilgi sızıntısı, mekan değerlendirmesi görünümü ve hassas mekan türleri (okul, sağlık kuruluşu, dini/kamu kurumu vb.) için otomatik olarak taranır. Kullanıcılar bir ilanı gerekçeyle bildirebilir; 3 farklı kullanıcının bildirdiği bir ilan otomatik gizlenir ve sahibine 7 günlük ilan yasağı uygulanır. Saatlik/günlük bildirim kotaları, bildirim mekanizmasının kötüye kullanılmasını (spam şikayet) da engelliyor.
+
+### 8) Fingo bir tanışma/flört uygulaması mı?
+
+Hayır. Fingo, **mekâna bağlı anonim bir ilan panosudur** — insan aramanın yanı sıra kaybolan evcil hayvan, kaybedilen eşya gibi günlük hayatta sık karşılaşılan durumlar için de aynı mekanizmayla kullanılır (ör. taksi durağında düşürülen bir cüzdan, parkta kaçan bir köpek). İlan verirken bir kategori (Kişi / Evcil Hayvan / Kayıp Eşya / Diğer) seçilir. Romantik/insan arama, uygulamanın sunduğu kullanım senaryolarından yalnızca biridir, merkezinde değildir.
+
+### 9) Verileriniz üzerinde hangi haklara sahipsiniz?
+
+KVKK, GDPR ve CCPA/CPRA'nın ortak sunduğu haklar Fingo'da da geçerlidir: verilerinize erişim talep etme, yanlış verinin düzeltilmesini isteme, işlemeye itiraz etme ve hesabınızı — dolayısıyla tüm kişisel verilerinizi — kalıcı olarak sildirme. Silme talebi uygulama içinden veya e-posta ile yapılabilir, 30 günlük bir bekleme süresinin ardından kalıcı olarak uygulanır. Ayrıntılar için [Gizlilik Politikası, Bölüm 5/7](README.md#5-haklarınız).
+
+### 10) Kötüye kullanım (stalking, taciz) şüphesi olursa ne oluyor?
+
+Fingo, bir kişiyi rızası dışında bulmak, izlemek veya taciz etmek için **tasarlanmamıştır** ve kullanım koşulları bunu açıkça yasaklar. Yukarıdaki teknik önlemler (anonimlik, karşılıklı onay, aynı-mekan sınırları, kimlik-tespit-eden-içerik engeli, moderasyon) bu tür kullanımı zorlaştırmak için birlikte çalışır. Şüpheli bir kullanım fark edilirse hesap askıya alınabilir; gerektiğinde ve yalnızca yetkili bir yasal makamın (mahkeme, savcılık, kolluk kuvveti) geçerli bir talebi olması hâlinde ilgili veri paylaşılır — bu dışında verileriniz hiçbir üçüncü tarafla paylaşılmaz.
+
+---
+
+**İletişim:** fingosupport@gmail.com
+
+---
+---
+
+# Privacy & Safety Principles — Fingo
+
+**Last updated:** July 2026
+
+Fingo is a **location-bound, anonymous bulletin board** — not a dating or matchmaking app. You can post about someone you saw, a pet you lost, or an item you dropped, tied to the real venue where it happened. This page explains, in plain language, **why** the app's core design decisions are what they are. For the full legal text, see the [Privacy Policy](README.md).
+
+These principles are designed to align with the shared core ideas behind Turkey's KVKK, the EU's GDPR, and the US CCPA/CPRA — data minimization, purpose limitation, and privacy by default.
+
+---
+
+### 1) Why does everyone start out as an anonymous swan?
+
+Because privacy is Fingo's **default** state, not openness. When you respond to a post, the other person cannot see your real name, age, or photo — only a randomly generated "swan identity" (e.g. "Female Swan #0421"). This is a direct application of the "privacy by default" principle in data-protection law: sharing personal data requires a deliberate step (mutual connection) — the system never does it for you automatically.
+
+### 2) Why is photo sharing locked until a mutual connection is made?
+
+Because a photo is one of the strongest ways to directly identify someone. Fingo never reveals a photo to the other side until both parties have confirmed each other — this is enforced **server-side**, not just hidden in the UI (the photo endpoint rejects the request unless `conversations.status = 'accepted'`). Even after connecting, photos can only be opened once and are permanently deleted from the server the moment they're viewed.
+
+### 3) Why do posts expire and delete themselves?
+
+Because data minimization and storage limitation are core data-protection principles — data shouldn't be retained once its purpose has ended. Posts on Fingo expire after 24 hours by default and are cleared by an automated background sweep. A user who found what they were looking for can also remove their post manually at any time; a reminder notification is sent 5 minutes after a connection is made.
+
+### 4) Why are names, phone numbers, and social media handles banned from posts?
+
+Because these are direct identifying data points that would defeat the whole point of the anonymity protection. Post text is automatically scanned against 60+ occupation/title keywords, Turkish occupation suffixes, and contact-info patterns (phone, Instagram, WhatsApp, etc.); if detected, the post **cannot be submitted at all, with no bypass** — the user must edit the content first.
+
+### 5) Why is mutual confirmation ("connection") required instead of one-sided access?
+
+Because the decision to reveal identity should never rest with just one person — it requires **both** parties' consent. Even if one user says "yes, this is them," nothing is revealed until the other person gives the same confirmation. This is the two-sided implementation of the explicit-consent principle found in both GDPR and KVKK.
+
+### 6) Why is posting about the same venue rate-limited?
+
+Because repeatedly posting about the same venue in a short time span can be a sign the venue is being used for something other than a genuine search — such as watching or following someone. A user can post about the same venue (matched by a 150-meter radius plus venue name) at most twice in 24 hours and four times in 7 days; identical title+description text can't be reposted within 30 days. These limits are enforced server-side, not a dismissible UI warning.
+
+### 7) Why is there moderation and a reporting system?
+
+Because any user-generated-content platform carries a risk of misuse, and reducing that risk is the platform's responsibility. Every post is automatically scanned for insults, leaked personal information, review-style content about a venue, and sensitive venue types (schools, healthcare, government, religious sites). Users can report a post with a reason; once 3 different users report the same post, it is auto-hidden and the owner receives a 7-day posting ban. Hourly/daily report quotas also prevent the reporting mechanism itself from being abused.
+
+### 8) Is Fingo a dating app?
+
+No. Fingo is a **location-bound, anonymous bulletin board** — alongside looking for a person, the same mechanism is used every day for lost pets and lost items (a wallet dropped at a taxi stand, a dog that escaped in a park). When creating a post, you choose a category (Person / Pet / Lost Item / Other). Finding a person is one of several use cases, not the app's center of gravity.
+
+### 9) What rights do you have over your data?
+
+The rights shared across KVKK, GDPR, and CCPA/CPRA all apply on Fingo: request access to your data, request correction of inaccurate data, object to processing, and permanently delete your account — and with it, all your personal data. Deletion can be requested in-app or by email, and takes effect after a 30-day grace period. See [Privacy Policy, Section 7](README.md#7-your-rights-gdpr--kvkk) for details.
+
+### 10) What happens if misuse (stalking, harassment) is suspected?
+
+Fingo is **not designed** to find, track, or harass someone against their will, and this is explicitly prohibited by our terms. The technical measures above (anonymity, mutual consent, same-venue limits, the identifying-content block, moderation) work together to make this kind of misuse harder. If suspicious use is detected, the account may be suspended; data is shared with a third party only when a competent legal authority (a court, prosecutor, or law enforcement agency) makes a valid request — otherwise, your data is never shared with anyone outside our infrastructure providers.
+
+---
+
+**Contact:** fingosupport@gmail.com
