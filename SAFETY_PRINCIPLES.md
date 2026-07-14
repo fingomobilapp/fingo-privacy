@@ -6,7 +6,7 @@
 
 Fingo, **mekâna bağlı dijital anonim bir ilan panosudur** — Fingo'nun temel amacı bir flört veya eşleşme platformu olmak değildir. Kaybettiğin bir eşyayı, kaçırdığın bir evcil hayvanı ya da tanışamadığın birini, o anı yaşadığın mekâna bağlı bir ilanla arayabilirsin. Bu sayfa, uygulamanın temel tasarım kararlarının **neden** böyle olduğunu, sade bir dille açıklıyor. Ayrıntılı, hukuki dille yazılmış tam metin için [Gizlilik Politikası](README.md)'na bakabilirsiniz.
 
-Bu ilkeler; Türkiye'de 6698 sayılı KVKK, Avrupa Birliği'nde GDPR ve Amerika Birleşik Devletleri'nde CCPA/CPRA'nın ortak temel prensipleriyle (veri minimizasyonu, amaç sınırlaması, varsayılan olarak gizlilik — "privacy by default") uyumlu olacak şekilde tasarlanmıştır.
+Bu ilkeler; Türkiye'de 6698 sayılı KVKK, Avrupa Birliği'nde GDPR ve Amerika Birleşik Devletleri'nde CCPA/CPRA'nın ortak temel prensipleriyle (veri minimizasyonu, amaç sınırlaması, varsayılan olarak gizlilik) uyumlu olacak şekilde tasarlanmıştır.
 
 ## Neden böyle tasarlandı?
 
@@ -20,7 +20,7 @@ Fingo geliştirilirken temel hedef yalnızca kullanıcı gizliliğini korumak de
 
 ### 2) Neden fotoğraf paylaşımı karşılıklı bağlantı kurulmadan açılmıyor?
 
-Çünkü fotoğraf, bir kişiyi doğrudan teşhis etmenin en güçlü yoludur. Fingo, iki taraf da birbirini onaylamadan (karşılıklı "bağlantı" kurulmadan) hiçbir fotoğrafı karşı tarafa göstermez — bu kural istemci tarafında bir arayüz kısıtlaması değil, **sunucu tarafında zorunlu kılınan** bir kuraldır (`conversations.status = 'accepted'` olmadan fotoğraf uç noktası isteği reddeder). Bağlantı kurulduktan sonra bile fotoğraflar yalnızca tek seferlik açılabiliyor ve açıldığı anda sunucudan kalıcı olarak siliniyor.
+Çünkü fotoğraf, bir kişiyi doğrudan teşhis etmenin en güçlü yoludur. Fingo, iki taraf da birbirini onaylamadan (karşılıklı "bağlantı" kurulmadan) hiçbir fotoğrafı karşı tarafa göstermez — bu kural istemci tarafında bir arayüz kısıtlaması değil, **sunucu tarafında zorunlu kılınan** bir kuraldır. Bağlantı kurulduktan sonra bile fotoğraflar yalnızca tek seferlik açılabiliyor ve açıldığı anda sunucudan kalıcı olarak siliniyor.
 
 ### 3) Neden ilanlar süreli ve kendiliğinden siliniyor?
 
@@ -40,11 +40,11 @@ Fingo geliştirilirken temel hedef yalnızca kullanıcı gizliliğini korumak de
 
 ### 7) Neden moderasyon ve şikayet mekanizması var?
 
-Çünkü kullanıcı tarafından oluşturulan her platformda kötüye kullanım riski vardır ve bu riski azaltmak platformun sorumluluğundadır. Her ilan metni; hakaret ve kişisel bilgi sızıntısı yönünden otomatik olarak taranır. Ayrıca **hassas mekan türlerinde ilan vermeye baştan izin verilmez**: anaokulu, ilkokul, ortaokul, lise gibi eğitim kurumları, hastane/sağlık kuruluşları, karakol/adliye/valilik gibi kamu kurumları ve cami/kilise gibi ibadet yerlerinde "İlan ver" seçeneği hem uygulama arayüzünde hem de sunucu tarafında (ikinci bir savunma katmanı olarak) kapalıdır. **Üniversiteler bu kısıtlamanın dışındadır** — kampüsler gerçek sosyal buluşma alanları olduğu için, adında "okul" geçen bir kelime bulunsa bile (ör. "... Üniversitesi Mühendislik Fakültesi") üniversite/yüksekokul/fakülte/akademi olarak tanınan mekanlarda ilan vermeye izin verilir; bu bilinçli bir istisnadır, K-12 eğitim kurumlarındaki (küçük yaştaki öğrenciler) hassasiyet üniversite kampüslerine aynı ölçüde uygulanmaz. Kullanıcılar ayrıca bir ilanı gerekçeyle bildirebilir; 3 farklı kullanıcının bildirdiği bir ilan otomatik gizlenir ve sahibine 7 günlük ilan yasağı uygulanır. Saatlik/günlük bildirim kotaları, bildirim mekanizmasının kötüye kullanılmasını (spam şikayet) da engelliyor.
+Çünkü kullanıcı tarafından oluşturulan her platformda kötüye kullanım riski vardır ve bu riski azaltmak platformun sorumluluğundadır. Her ilan metni; hakaret ve kişisel bilgi sızıntısı yönünden otomatik olarak taranır. Ayrıca **hassas mekan türlerinde ilan vermeye baştan izin verilmez**: anaokulu, ilkokul, ortaokul, lise gibi eğitim kurumları, hastane/sağlık kuruluşları, karakol/adliye/valilik gibi kamu kurumları ve cami/kilise gibi ibadet yerlerinde "İlan ver" seçeneği hem uygulama arayüzünde hem de sunucu tarafında (ikinci bir savunma katmanı olarak) kapalıdır. **Üniversiteler bu kısıtlamanın dışındadır** — kampüsler gerçek sosyal buluşma alanları olduğu için, adında "okul" geçen bir kelime bulunsa bile (ör. "... Üniversitesi Mühendislik Fakültesi") üniversite/yüksekokul/fakülte/akademi olarak tanınan mekanlarda ilan vermeye izin verilir; bu bilinçli bir istisnadır, K-12 eğitim kurumlarındaki (küçük yaştaki öğrenciler) hassasiyet üniversite kampüslerine aynı ölçüde uygulanmaz. Kullanıcılar ayrıca bir ilanı gerekçeyle bildirebilir; 3 farklı kullanıcının bildirdiği bir ilan otomatik gizlenir ve sahibine 7 günlük ilan yasağı uygulanır. Saatlik/günlük bildirim kotaları, bildirim mekanizmasının kötüye kullanılmasını (spam şikayet) da engellemektedir.
 
 ### 8) Fingo bir tanışma/flört uygulaması mı?
 
-Fingo'nun temel amacı bir flört veya eşleşme platformu olmak değildir — **mekâna bağlı dijital anonim bir ilan panosudur**. İnsan aramanın yanı sıra kaybolan evcil hayvan, kaybedilen eşya gibi günlük hayatta sık karşılaşılan durumlar için de aynı mekanizmayla kullanılır (ör. taksi durağında düşürülen bir cüzdan, parkta kaçan bir köpek). İlan verirken bir kategori (Kişi / Evcil Hayvan / Kayıp Eşya / Diğer) seçilir. Romantik/insan arama, uygulamanın sunduğu kullanım senaryolarından biridir — iki kullanıcı bu yolla gerçekten tanışabilir, ama bu uygulamanın merkezî amacı değil, ortaya çıkabilecek sonuçlardan sadece biridir.
+Fingo'nun temel amacı bir flört veya eşleşme platformu olmak değildir — **mekâna bağlı dijital anonim bir ilan panosudur**. Daha önce etkileşime girilen birini aramanın yanı sıra kaybolan evcil hayvan, kaybedilen eşya gibi günlük hayatta sık karşılaşılan durumlar için de aynı mekanizmayla kullanılır (ör. taksi ya da taksi durağında düşürülen bir cüzdan, parkta kaçan bir köpek). İlan verirken bir kategori (Kişi / Evcil Hayvan / Kayıp Eşya / Diğer) seçilir. Kişi arama, uygulamanın sunduğu kullanım senaryolarından biridir — iki kullanıcı bu yolla gerçekten tanışabilir, ama bu uygulamanın merkezî amacı değil, ortaya çıkabilecek sonuçlardan sadece biridir.
 
 ### 9) Verileriniz üzerinde hangi haklara sahipsiniz?
 
@@ -52,7 +52,7 @@ Fingo; yürürlükteki veri koruma düzenlemelerinin (KVKK, GDPR, CCPA/CPRA gibi
 
 ### 10) Kötüye kullanım (stalking, taciz) şüphesi olursa ne oluyor?
 
-Fingo, bir kişinin rızası dışında izlenmesi, taciz edilmesi veya sistematik olarak takip edilmesi amacıyla kullanılmak üzere **tasarlanmamıştır** ve kullanım koşulları bunu açıkça yasaklar. Teknik sınırlamalar ve içerik politikaları (anonimlik, karşılıklı onay, aynı-mekan sınırları, kimlik-tespit-eden-içerik engeli, moderasyon) bu tür kötüye kullanımları önlemeyi amaçlar. Şüpheli bir kullanım fark edilirse hesap askıya alınabilir; gerektiğinde ve yalnızca yetkili bir yasal makamın (mahkeme, savcılık, kolluk kuvveti) geçerli bir talebi olması hâlinde ilgili veri paylaşılır — bu dışında verileriniz hiçbir üçüncü tarafla paylaşılmaz.
+Fingo, bir kişinin rızası dışında izlenmesi, taciz edilmesi veya sistematik olarak takip edilmesi amacıyla kullanılmak üzere **tasarlanmamıştır** ve kullanım koşulları bunu açıkça yasaklar. Teknik sınırlamalar ve içerik politikaları (anonimlik, karşılıklı onay, aynı-mekan sınırları, kimlik-tespit-eden-içerik engeli, moderasyon) bu tür kötüye kullanımları önlemeyi amaçlar. Şüpheli bir kullanım fark edilirse hesap askıya alınabilir; gerektiğinde ve yalnızca yetkili bir yasal makamın (mahkeme, savcılık, kolluk kuvveti) geçerli bir talebi olması hâlinde ilgili veri paylaşılır — bunların dışında verileriniz hiçbir üçüncü tarafla paylaşılmaz.
 
 ---
 
