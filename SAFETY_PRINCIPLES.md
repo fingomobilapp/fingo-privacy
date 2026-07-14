@@ -87,7 +87,7 @@ Because privacy is Fingo's **default** state, not openness. When you respond to 
 
 ### 2) Why is photo sharing locked until a mutual connection is made?
 
-Because a photo is one of the strongest ways to directly identify someone. Fingo never reveals a photo to the other side until both parties have confirmed each other — this is enforced **server-side**, not just hidden in the UI (the photo endpoint rejects the request unless `conversations.status = 'accepted'`). Even after connecting, photos can only be opened once and are permanently deleted from the server the moment they're viewed.
+Because a photo is one of the strongest ways to directly identify someone. Fingo never reveals a photo to the other side until both parties have confirmed each other — this is enforced **server-side**, not just hidden in the UI. Even after connecting, photos can only be opened once and are permanently deleted from the server the moment they're viewed.
 
 ### 3) Why do posts expire and delete themselves?
 
