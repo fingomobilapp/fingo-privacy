@@ -45,11 +45,18 @@
       map.addChild(new YMapDefaultSchemeLayer());
       map.addChild(new YMapDefaultFeaturesLayer());
       window._YMapMarker = YMapMarker;
+      if (window._pendingMarkers) {
+        window.setFingoMarkers(window._pendingMarkers);
+        window._pendingMarkers = null;
+      }
     }
 
     // Flutter tarafından çağrılır: gerçek cluster verisini haritaya basar.
     window.setFingoMarkers = function (points) {
-      if (!map || !window._YMapMarker) return;
+      if (!map || !window._YMapMarker) {
+        window._pendingMarkers = points;
+        return;
+      }
       points.forEach(function (p) {
         const el = document.createElement('div');
         el.className = 'fingo-pin';
