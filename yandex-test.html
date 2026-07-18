@@ -5,27 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <style>
     html, body, #map { margin: 0; padding: 0; width: 100%; height: 100%; }
+    .fingo-pin {
+      background: #FF6B35;
+      color: #fff;
+      border-radius: 50%;
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      border: 2px solid #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+    }
   </style>
   <script src="https://api-maps.yandex.ru/v3/?apikey=6f1c411d-2d5b-41e9-8dbb-c12a09b1bd7f&lang=tr_TR" type="text/javascript"></script>
 </head>
 <body>
   <div id="map"></div>
   <script type="text/javascript">
+    let map;
+    let markerLayer;
+    const {YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker, YMapDefaultMarker} = {};
+
     async function init() {
       await ymaps3.ready;
-      const {YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer} = ymaps3;
+      const {YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker} = ymaps3;
 
-      const map = new YMap(document.getElementById('map'), {
+      map = new ymaps3.YMap(document.getElementById('map'), {
         location: {
-          center: [32.8541, 39.9208],
-          zoom: 15
+          center: [29.0258, 40.9847], // Kadıköy, İstanbul
+          zoom: 13
         },
         mode: 'raster'
       });
 
       map.addChild(new YMapDefaultSchemeLayer());
       map.addChild(new YMapDefaultFeaturesLayer());
+      window._YMapMarker = YMapMarker;
     }
+
+    // Flutter tarafından çağrılır: gerçek cluster verisini haritaya basar.
+    window.setFingoMarkers = function (points) {
+      if (!map || !window._YMapMarker) return;
+      points.forEach(function (p) {
+        const el = document.createElement('div');
+        el.className = 'fingo-pin';
+        el.textContent = p.count;
+        el.addEventListener('click', function () {
+          if (window.FingoBridge) {
+            window.FingoBridge.postMessage(JSON.stringify({mekanAdi: p.mekanAdi, count: p.count}));
+          }
+        });
+        const marker = new window._YMapMarker(
+          {coordinates: [p.lng, p.lat]},
+          el
+        );
+        map.addChild(marker);
+      });
+    };
+
     init();
   </script>
 </body>
