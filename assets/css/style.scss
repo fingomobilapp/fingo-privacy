@@ -1,0 +1,14 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* Theme'in kendi içerik sarmalayıcısı ne olursa olsun (main-content,
+   container, vb.) genel olarak paragraf/liste metnini iki yana yasla. */
+p, li {
+  text-align: justify;
+}
+
+h1, h2, h3, .page-header {
+  text-align: left;
+}
