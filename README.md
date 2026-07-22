@@ -4,7 +4,7 @@
 
 # Fingo Gizlilik Politikası
 
-**Son güncelleme:** Temmuz 2026
+**Son güncelleme:** 2026-07-23
 
 Fingo ("uygulama") olarak kullanıcılarımızın gizliliğine önem veriyoruz. Bu politika, uygulamamızı kullanırken hangi verileri topladığımızı, nasıl kullandığımızı ve nasıl koruduğumuzu açıklar.
 
@@ -18,8 +18,11 @@ Fingo ("uygulama") olarak kullanıcılarımızın gizliliğine önem veriyoruz. 
 - Profil fotoğrafı ve galeri fotoğrafları (isteğe bağlı)
 
 ### Konum Bilgisi
-- Uygulama açıkken yakındaki ilanları göstermek için anlık konum kullanılır.
-- Konumunuz sunucularımızda saklanmaz; yalnızca ilan oluştururken seçtiğiniz mekan koordinatı kaydedilir.
+- Uygulama açıkken yakındaki ilanları haritada göstermek için anlık konum kullanılır.
+- Ayrıca, "yakınında yeni ilan verildi" bildirimini gönderebilmek amacıyla, son bilinen tek bir konumunuz (geçmiş/iz değil — her yeni konum bir öncekinin üzerine yazılır) sunucularımızda saklanır. Bu, izin verdiğiniz sürece uygulama açıkken periyodik olarak, izin verirseniz arka planda da (yaklaşık 20 dakikada bir) güncellenir.
+- Bu bildirimi Profil → Ayarlar kısmından kapatabilirsiniz; kapatmak bildirimi durdurur, ancak son konum güncellemesinin sunucuya gönderilmesini teknik olarak engellemez. Konum paylaşımını tamamen durdurmak için cihaz ayarlarından konum iznini iptal edebilirsiniz.
+- İlan oluştururken ayrıca, seçtiğiniz mekanın koordinatı (sizin anlık konumunuz değil, mekanın konumu) ilanla birlikte kaydedilir.
+- Geçmiş konum verisi (rota, hareket geçmişi) tutulmaz; sürekli arka plan izleme yapılmaz — yalnızca en son tek nokta, yukarıdaki amaçla güncellenir.
 
 ### İlan ve Mesaj Verileri
 - Oluşturduğunuz ilanlar (mekan adı, başlık, açıklama)
@@ -46,7 +49,7 @@ Fingo ("uygulama") olarak kullanıcılarımızın gizliliğine önem veriyoruz. 
 - **Fotoğraf kısıtlaması:** Kullanıcılar yalnızca kendilerine ait profil ve galeri fotoğrafı yükleyebilir. Başka kişilere (ör. ilanda aradığınız kişi) veya mekanlara ait fotoğraf yüklemek yasaktır; uygulama bu tür yüklemelere teknik olarak izin vermez.
 - **Sohbet içi tek seferlik fotoğraf:** Karşılıklı eşleşme gerçekleştikten sonra, sohbet ekranından kamera veya galeriden tek seferlik görüntülenmek üzere fotoğraf gönderilebilir. Gönderilen fotoğraf, alıcı tarafından açılıp görüntülendiği anda erişime kapatılır ve kısa süre içinde sunucularımızdan kalıcı olarak silinir; bir daha kimse tarafından görüntülenemez. Fotoğrafın kameradan mı galeriden mi gönderildiği, görüntülenirken karşı tarafa gösterilir. Ekran görüntüsü alınması teknik olarak engellenmez; ancak bir kullanıcı ekran görüntüsü aldığında karşı taraf bilgilendirilir. **İstisna:** bir fotoğraf karşı taraf tarafından bildirilirse, o fotoğraf kanıt olarak moderasyon amacıyla saklanır ve otomatik silme uygulanmaz.
 - **İlan sınırları:** Bir kullanıcı bir günde en fazla 3 ilan açabilir ve aynı anda en fazla 10 aktif ilana sahip olabilir. Bu sınırlar spam ve kötüye kullanımı önlemek için sunucu tarafında uygulanır.
-- **Şikayet mekanizması:** Her kullanıcı, uygunsuz bulduğu bir ilanı gerekçe seçerek bildirebilir. Farklı kullanıcılardan gelen bildirimler eşiği aştığında ilan otomatik olarak gizlenir ve sahibine geçici ilan verme kısıtlaması uygulanır. Bildirimler kötüye kullanıma karşı saatlik ve günlük kotalarla sınırlandırılmıştır.
+- **Şikayet mekanizması:** Her kullanıcı, uygunsuz bulduğu bir ilanı gerekçe seçerek bildirebilir. **3 farklı kullanıcı** aynı ilanı bildirdiğinde ilan otomatik olarak gizlenir ve sahibine geçici ilan verme kısıtlaması uygulanır. Bildirimler kötüye kullanıma karşı saatlik ve günlük kotalarla sınırlandırılmıştır.
 - İlan başlığı ve açıklamaları; hakaret, kişisel bilgi paylaşımı ve benzeri ihlallere karşı otomatik olarak denetlenir.
 
 ---
@@ -127,7 +130,7 @@ Gizlilik ile ilgili sorularınız için:
 
 # Privacy Policy — Fingo
 
-**Effective date:** 2026-06-18
+**Effective date:** 2026-07-23
 **Developer:** Taha Ercan (fingosupport@gmail.com)
 
 Fingo is an anonymous, location-based app that helps you find someone you
@@ -148,12 +151,21 @@ This document explains what data Fingo collects, why, and how it is used.
 - Optional: age, neighborhood, bio, profile photo
 
 ### Location
-- Your **live** location is used only to display nearby venue posts on the
-  map.
-- Your location is **not stored** on our server. When you create a post,
-  only the venue's coordinate (not yours) is saved with the post.
-- We do not retain real-time or historical location history of users and
-  do not perform continuous background tracking.
+- Your **live** location is used to display nearby venue posts on the map.
+- We also store a single **last-known location** (not a history or
+  trail — each update overwrites the previous one) on our server, used
+  solely to send you a "new post nearby" notification. This is updated
+  periodically while the app is open, and (if you grant background
+  location permission) roughly every 20 minutes in the background.
+- You can turn this notification off from Profile → Settings; doing so
+  stops the notification but does not technically stop the last-known
+  location from being sent to our server. To stop location sharing
+  entirely, revoke the location permission in your device settings.
+- When you create a post, the venue's coordinate (not your personal
+  location) is saved with the post.
+- We do not retain a location history or trail, and we do not perform
+  continuous real-time tracking — only the single last-known point is
+  kept, for the purpose described above.
 
 ### Your posts and messages
 - Title, story, venue name and coordinate of posts you create
